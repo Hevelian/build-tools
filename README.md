@@ -15,7 +15,7 @@ Hevelian Build Tools
 				<dependency>
 					<groupId>com.hevelian.build-utils</groupId>
 					<artifactId>build-tools</artifactId>
-					<version>1.0.0-SNAPSHOT</version>
+					<version>1.0.1</version>
 				</dependency>
 				<dependency>
 					<groupId>com.puppycrawl.tools</groupId>
