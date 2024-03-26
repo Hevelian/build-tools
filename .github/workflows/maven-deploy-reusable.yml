@@ -1,6 +1,5 @@
-# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
-# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
-
+# This workflow will build a package using Maven and then publish it to OSS Sonatype Maven repository when a release is created
+# It can also be reused by other workflows to publish artifacts from other repositories (usually within the Hevelian organization).
 name: Maven Deploy
 
 on:
@@ -23,19 +22,22 @@ on:
         required: true
       MAVEN_GPG_PASSPHRASE:
         required: true
+
+env:
+  # Java version required to build this project in case the workflow is triggered within the current repo.
+  BUILD_TOOLS_JAVA_VERSION: '11'
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
-
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK ${{ inputs.java-version || '11' }}
+    - name: Set up JDK ${{ inputs.java-version || env.BUILD_TOOLS_JAVA_VERSION }}
       uses: actions/setup-java@v4
       with:
-        java-version: ${{ inputs.java-version || '11' }}
+        java-version: ${{ inputs.java-version || env.BUILD_TOOLS_JAVA_VERSION }}
         distribution: temurin
         cache: maven
         server-id: ossrh
