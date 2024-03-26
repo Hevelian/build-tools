@@ -9,10 +9,10 @@ on:
   #To be able to reuse this workflow in similar projects.
   # This is a first simplified version, that will do the job just fine.
   workflow_call:
-    # inputs:
-    #   java-version:
-    #     required: true
-    #     type: string
+    inputs:
+      java-version:
+        required: true
+        type: string
     # secrets:
     #   OSSRH_USERNAME:
     #     required: true
@@ -31,12 +31,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 11
+    - name: Set up JDK ${{ inputs.java-version }}
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: 'maven'
+        java-version: ${{ inputs.java-version }}
+        distribution: temurin
+        cache: maven
         server-id: ossrh
         server-username: OSSRH_USERNAME
         server-password: OSSRH_TOKEN
