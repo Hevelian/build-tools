@@ -6,7 +6,22 @@ name: Maven Deploy
 on:
   release:
     types: [created]
-
+  #To be able to reuse this workflow in similar projects.
+  # This is a first simplified version, that will do the job just fine.
+  workflow_call:
+    # inputs:
+    #   java-version:
+    #     required: true
+    #     type: string
+    # secrets:
+    #   OSSRH_USERNAME:
+    #     required: true
+    #   OSSRH_TOKEN:
+    #     required: true
+    #   MAVEN_GPG_PRIVATE_KEY:
+    #     required: true
+    #   MAVEN_GPG_PASSPHRASE:
+    #     required: true
 jobs:
   build:
 
