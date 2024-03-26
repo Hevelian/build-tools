@@ -13,15 +13,15 @@ on:
       java-version:
         required: true
         type: string
-    # secrets:
-    #   OSSRH_USERNAME:
-    #     required: true
-    #   OSSRH_TOKEN:
-    #     required: true
-    #   MAVEN_GPG_PRIVATE_KEY:
-    #     required: true
-    #   MAVEN_GPG_PASSPHRASE:
-    #     required: true
+    secrets:
+      OSSRH_USERNAME:
+        required: true
+      OSSRH_TOKEN:
+        required: true
+      MAVEN_GPG_PRIVATE_KEY:
+        required: true
+      MAVEN_GPG_PASSPHRASE:
+        required: true
 jobs:
   build:
 
