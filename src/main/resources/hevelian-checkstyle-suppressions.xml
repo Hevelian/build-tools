@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suppressions PUBLIC "-//Puppy Crawl//DTD Suppressions 1.1//EN" "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+<suppressions>
+	<!-- Suppress all checks for the test classes -->
+	<suppress files=".*[\\/]src[\\/](test|integration-test)[\\/]" checks=".*" />
+	<!-- For all the java files with name that starts with 'Source' (copies of the classes that cannot be extended for any reason)
+	we suppress the FileLength check which cannot be turned off in the code. -->
+	<suppress files=".*[\\/]Source.+\.java" checks="FileLength" />
+</suppressions>
