@@ -5,7 +5,11 @@
     <groupId>com.hevelian.build-utils</groupId>
     <artifactId>build-tools</artifactId>
     <version>1.0.2-SNAPSHOT</version>
+    
     <name>Hevelian Build Tools</name>
+    <description>Reusable resources, such as Checkstyle rules and other tools, designed to streamline and standardize the development process in accordance with Hevelian standards.</description>
+    <url>https://github.com/Hevelian/build-tools/blob/main/README.md</url>
+
 
     <properties>
         <maven.test.skip>true</maven.test.skip>
