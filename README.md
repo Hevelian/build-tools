@@ -10,12 +10,12 @@ Hevelian Build Tools
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-checkstyle-plugin</artifactId>
-			<version>${checkstyle.version}</version>
+			<version>3.3.1</version>
 			<dependencies>
 				<dependency>
 					<groupId>com.hevelian.build-utils</groupId>
 					<artifactId>build-tools</artifactId>
-					<version>1.0.1</version>
+					<version>1.0.2</version>
 				</dependency>
 				<dependency>
 					<groupId>com.puppycrawl.tools</groupId>
