@@ -291,14 +291,13 @@
 		<module name="RightCurly">
 			<property name="id" value="RightCurlySame" />
 			<property name="tokens"
-				value="LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_DO" />
+				value="CTOR_DEF, CLASS_DEF, METHOD_DEF, LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_DO" />
 		</module>
-
 		<module name="RightCurly">
 			<property name="id" value="RightCurlyAlone" />
 			<property name="option" value="alone" />
 			<property name="tokens"
-				value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, LITERAL_WHILE, STATIC_INIT, INSTANCE_INIT" />
+				value="LITERAL_FOR, LITERAL_WHILE, STATIC_INIT, INSTANCE_INIT" />
 		</module>
 		<module name="SeparatorWrap">
 			<property name="id" value="SeparatorWrapDot" />
@@ -334,7 +333,10 @@
 		<module name="UncommentedMain">
 			<property name="excludedClasses" value=".*\.Application" />
 		</module>
-		<module name="UnnecessaryParentheses" />
+		<!-- Using the default token except LAND, LOR, where it is allowed to have additional parentheses for better readability. -->
+		<module name="UnnecessaryParentheses">
+			<property name="tokens" value="EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA, TEXT_BLOCK_LITERAL_BEGIN, LITERAL_INSTANCEOF, GT, LT, GE, LE, EQUAL, NOT_EQUAL, UNARY_MINUS, UNARY_PLUS, INC, DEC, LNOT, BNOT, POST_INC, POST_DEC" />
+		</module>
 		<module name="UnusedImports">
 			<property name="processJavadoc" value="true"/>
 		</module>
@@ -370,12 +372,6 @@
 			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
 				value="High Complexity Code Warning Suppression" />
 		</module>
-		<module name="SuppressionCommentFilter">
-			<property name="offCommentFormat" value="// REUSED CLASS" />
-			<property name="onCommentFormat" value="// END REUSED CLASS" />
-			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
-				value="High Complexity Code Warning Suppression" />
-		</module>
 	</module>
 	<module name="LineLength">
 		<property name="max" value="120" />
@@ -389,6 +385,10 @@
       <property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)" />
       <property name="checkFormat" value="$1"/>
     </module>
+    <module name="SuppressWithPlainTextCommentFilter">
+      <property name="offCommentFormat" value="// REUSED CLASS" />
+	  <property name="onCommentFormat" value="// END REUSED CLASS" />
+	</module>
 	<module name="FileLength">
 		<property name="severity" value="warning" />
 		<property name="max" value="500" />
