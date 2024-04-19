@@ -319,6 +319,7 @@
 		<module name="SuperClone" />
 		<module name="SuperFinalize" />
 		<module name="SuppressWarnings" />
+		<module name="SuppressWarningsHolder" />
 		<module name="ThrowsCount">
 			<property name="max" value="3" />
 		</module>
@@ -389,6 +390,7 @@
       <property name="offCommentFormat" value="// REUSED CLASS" />
 	  <property name="onCommentFormat" value="// END REUSED CLASS" />
 	</module>
+	<module name="SuppressWarningsFilter" />
 	<module name="FileLength">
 		<property name="severity" value="warning" />
 		<property name="max" value="500" />
