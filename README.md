@@ -15,12 +15,12 @@ Hevelian Build Tools
 				<dependency>
 					<groupId>com.hevelian.build-utils</groupId>
 					<artifactId>build-tools</artifactId>
-					<version>1.0.2</version>
+					<version>1.0.4</version>
 				</dependency>
 				<dependency>
 					<groupId>com.puppycrawl.tools</groupId>
 					<artifactId>checkstyle</artifactId>
-					<version>10.14.2</version>
+					<version>10.18.1</version>
 				</dependency>
 			</dependencies>
 			<executions>
